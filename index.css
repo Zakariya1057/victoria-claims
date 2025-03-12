@@ -393,7 +393,7 @@ button {
     width: 0;
     height: 2px;
     background-color: var(--color-secondary);
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, opacity 0.3s ease;
     opacity: 0;
 }
 
@@ -414,6 +414,26 @@ button {
 .nav__link--active::after {
     width: calc(100% - 2rem);
     opacity: 1;
+}
+
+/* When hovering on any nav item, hide the active state */
+.nav__list:hover .nav__link--active {
+    color: var(--color-white);
+}
+
+.nav__list:hover .nav__link--active::after {
+    width: 0;
+    opacity: 0;
+}
+
+/* But keep the hover effect for any nav item being hovered */
+.nav__link:hover {
+    color: var(--color-secondary-light) !important;
+}
+
+.nav__link:hover::after {
+    width: calc(100% - 2rem) !important;
+    opacity: 1 !important;
 }
 
 .nav__link--featured {
@@ -532,30 +552,6 @@ button {
         pointer-events: auto;
     }
     
-    .close-menu {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        background-color: var(--color-secondary);
-        color: var(--color-white);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 101;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        border: none;
-        transition: all 0.3s ease;
-    }
-    
-    .close-menu:hover {
-        background-color: var(--color-secondary-dark);
-        transform: rotate(90deg);
-    }
-    
     .nav__list {
         flex-direction: column;
         padding: 0 2rem;
@@ -614,6 +610,19 @@ button {
         border-left: 3px solid var(--color-secondary);
     }
     
+    /* Mobile: When any nav item is hovered, reset the active style */
+    .nav__list:hover .nav__link--active {
+        background-color: transparent;
+        color: var(--color-white);
+        border-left: none;
+    }
+    
+    /* Mobile: Keep the hover effect for the hovered item */
+    .nav__link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--color-secondary-light) !important;
+    }
+    
     .nav__link--featured {
         margin: 1rem 0 0 0;
     }
@@ -625,15 +634,29 @@ button {
     .menu-toggle--active .menu-toggle__line {
         background-color: var(--color-white);
     }
-}
-
-@media (max-width: 768px) {
-    .header__inner {
-        padding: 0.4rem 0;
+    
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: var(--color-secondary);
+        color: var(--color-white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 101;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border: none;
+        transition: all 0.3s ease;
     }
     
-    .logo-text {
-        font-size: var(--font-size-md);
+    .close-menu:hover {
+        background-color: var(--color-secondary-dark);
+        transform: rotate(90deg);
     }
     
     .nav__list {
@@ -647,7 +670,7 @@ button {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .header {
         padding: 0.3rem 0;
     }
@@ -3025,16 +3048,17 @@ button {
         border-left: 3px solid var(--color-secondary);
     }
 
-    .nav__link--featured {
-        margin: 1rem 0 0 0;
+    /* Mobile: When any nav item is hovered, reset the active style */
+    .nav__list:hover .nav__link--active {
+        background-color: transparent;
+        color: var(--color-white);
+        border-left: none;
     }
 
-    .menu-toggle {
-        z-index: 99;
-    }
-
-    .menu-toggle--active .menu-toggle__line {
-        background-color: var(--color-white);
+    /* Mobile: Keep the hover effect for the hovered item */
+    .nav__link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--color-secondary-light) !important;
     }
 }
 
@@ -3143,4 +3167,80 @@ button {
     box-shadow: 0 10px 20px rgba(15, 53, 98, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.2);
     /*background: #1a4575;*/
     /*color: #5bca6d;*/
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0.4rem;
+    left: 1rem;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-secondary);
+    transition: width 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.nav__link:hover {
+    color: var(--color-secondary-light);
+}
+
+.nav__link:hover::after {
+    width: calc(100% - 2rem);
+    opacity: 1;
+}
+
+.nav__link--active {
+    color: var(--color-secondary);
+    font-weight: var(--font-weight-semibold);
+}
+
+.nav__link--active::after {
+    width: calc(100% - 2rem);
+    opacity: 1;
+}
+
+/* When hovering on any nav item, hide the active state */
+.nav__list:hover .nav__link--active {
+    color: var(--color-white);
+}
+
+.nav__list:hover .nav__link--active::after {
+    width: 0;
+    opacity: 0;
+}
+
+/* But keep the hover effect for any nav item being hovered */
+.nav__link:hover {
+    color: var(--color-secondary-light) !important;
+}
+
+.nav__link:hover::after {
+    width: calc(100% - 2rem) !important;
+    opacity: 1 !important;
+}
+
+.nav__link--featured {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border-radius: 4px;
+    padding: 0.75rem 1.25rem;
+    margin-left: 0.5rem;
+    font-weight: var(--font-weight-semibold);
+    box-shadow: 0 4px 10px rgba(79, 204, 62, 0.25);
+}
+
+.nav__link--featured::after {
+    display: none;
+}
+
+.nav__link--featured:hover {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(79, 204, 62, 0.3);
+}
+
+.nav__link--featured:active {
+    transform: translateY(0);
 }
