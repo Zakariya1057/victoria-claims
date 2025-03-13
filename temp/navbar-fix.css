@@ -1,0 +1,179 @@
+/* Fix for mobile navbar */
+/* Properly size logo based on user requirements - greatly increased size */
+.logo__image {
+    width: 80px; /* Significantly increased size from 65px */
+    height: auto;
+    margin-right: 0.75rem;
+    filter: brightness(0) invert(1); /* Make logo white by default */
+    transition: all 0.3s ease;
+    /* Add max dimensions to prevent excessive sizing on Mac */
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.header--scrolled .logo__image {
+    filter: none; /* Return to original color on scroll */
+}
+
+/* Button - ensure it's working, set cursor and normalize */
+.menu-toggle {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+/* Fix the mobile navigation display */
+@media (max-width: 991px) {
+    /* Navbar white on scroll for mobile */
+    .header--scrolled {
+        background-color: var(--color-white);
+        box-shadow: var(--shadow-md);
+    }
+    
+    /* Change hamburger color when navbar is white */
+    .header--scrolled .menu-toggle__line {
+        background-color: var(--color-text);
+        box-shadow: none;
+    }
+    
+    /* Keep hamburger white when active, regardless of scroll */
+    .header--scrolled .menu-toggle--active .menu-toggle__line {
+        background-color: white;
+    }
+    
+    /* Nav initially hidden but ready for toggle */
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: black; /* Changed from green to black */
+        z-index: 150;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        
+        /* Important transition properties */
+        transition: all 0.4s ease;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        pointer-events: none;
+    }
+    
+    /* Show menu when active class is applied */
+    .nav.nav--active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+    }
+    
+    /* List styling for mobile */
+    .nav__list {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 1rem;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    /* Nav items animation base */
+    .nav__item {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        transition-delay: calc(var(--item-index) * 0.1s);
+        background-color: black; /* Added background color */
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    /* Nav items animation when active */
+    .nav--active .nav__item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Ensure menu toggle button is visible and styled correctly */
+    .menu-toggle {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        z-index: 200;
+        position: relative;
+        cursor: pointer;
+        margin-left: 1rem;
+    }
+    
+    /* Menu toggle lines */
+    .menu-toggle__line {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Animation for hamburger to X - improved transforms */
+    .menu-toggle--active .menu-toggle__line:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-toggle--active .menu-toggle__line:nth-child(2) {
+        opacity: 0;
+        transform: scale(0);
+    }
+    
+    .menu-toggle--active .menu-toggle__line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    /* Link styling - always white regardless of scroll state */
+    .nav__link {
+        color: var(--color-white) !important; /* Force white text always */
+        font-size: var(--font-size-lg);
+        padding: 1rem;
+        width: 100%;
+        display: block;
+        font-family: var(--font-primary); /* Figtree font */
+        font-weight: var(--font-weight-semibold);
+        background-color: black; /* Added background color */
+    }
+    
+    /* Ensure even when active, links remain white */
+    .nav__link--active,
+    .header--scrolled .nav__link,
+    .header--scrolled .nav__link--active {
+        color: var(--color-white) !important; /* Force white color always */
+    }
+    
+    .nav__link:hover {
+        color: var(--color-secondary-light) !important; /* Allow hover color to remain */
+        background-color: #111; /* Slightly lighter black on hover */
+    }
+}
+
+/* Keep logo white on mobile, even when scrolled */
+@media (max-width: 768px) {
+    .logo__image {
+        width: 70px; /* Increased from 55px for even larger mobile size */
+        max-width: 70px;
+        max-height: 70px;
+        filter: brightness(0) invert(1) !important; /* Force white logo on mobile */
+    }
+    
+    /* Allow logo to be normal color on scroll for mobile */
+    .header--scrolled .logo__image {
+        filter: none !important; /* Use original color when scrolled */
+    }
+}

@@ -1,0 +1,148 @@
+/* Partners section styling */
+.partners {
+    background-color: #fafafa;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.partners .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.partners__wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.partners__header {
+    flex: 0 0 20%;
+    padding-right: 20px;
+    margin-left: 2rem;
+}
+
+.partners__title {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #777;
+    letter-spacing: 1.2px;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-family: 'Figtree', sans-serif;
+}
+
+/* Carousel styling */
+.partners__carousel {
+    flex: 1;
+    position: relative;
+    padding-right: 2rem;
+    max-width: 80%;
+    width: 80%;
+}
+
+.carousel-viewport {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 60px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: transform 0.8s ease;
+    width: max-content;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+
+.carousel-item img {
+    height: 50px;
+    max-width: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.9);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .partners__header {
+        margin-left: 1.5rem;
+    }
+    
+    .partners__carousel {
+        padding-right: 1.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .partners__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .partners__header {
+        flex: 0 0 100%;
+        margin-bottom: 2rem;
+        padding-right: 0;
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    .partners__carousel {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .carousel-viewport {
+        height: 65px;
+    }
+}
+
+@media (max-width: 767px) {
+    .partners {
+        padding: 2rem 0;
+    }
+    
+    .partners__header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .partners__title br {
+        display: none;
+    }
+    
+    .carousel-viewport {
+        height: 60px;
+    }
+    
+    .carousel-item img {
+        height: 40px;
+    }
+    
+    .partners__carousel {
+        padding: 0 0.75rem;
+    }
+}
