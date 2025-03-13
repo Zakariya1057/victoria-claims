@@ -15,12 +15,25 @@
     height: 100%;
     z-index: -1;
     overflow: hidden;
-    background-color: #232323; /* Fallback background if video doesn't load */
-    background-image: url('../assets/poster-image.jpg'); /* Use same image as poster */
+    background-color: #232323; /* Fallback background */
+    background-image: url('../assets/video_mobile.jpg'); /* Fallback image that matches the video */
     background-size: cover;
     background-position: center center;
 }
 
+/* Hide video on iOS and rely on background image instead */
+@supports (-webkit-touch-callout: none) {
+    .hero__video {
+        display: none;
+    }
+    
+    /* On iOS, we'll use a background image that matches the video frames */
+    .hero__video-container {
+        background-image: url('../assets/video_mobile.jpg');
+    }
+}
+
+/* Standard video styling for non-iOS devices */
 .hero__video {
     position: absolute;
     top: 50%;
@@ -31,19 +44,6 @@
     height: auto;
     transform: translateX(-50%) translateY(-50%);
     object-fit: cover;
-}
-
-/* Special iOS-specific styles to help with video playback */
-@supports (-webkit-touch-callout: none) {
-    .hero__video {
-        position: absolute;
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        top: 0;
-        left: 0;
-        transform: none;
-    }
 }
 
 .hero__overlay {
