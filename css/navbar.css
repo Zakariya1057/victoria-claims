@@ -212,6 +212,7 @@
     
     .menu-toggle {
         display: flex;
+        z-index: 101; /* Higher than the nav to stay on top */
     }
     
     .nav {
@@ -235,6 +236,19 @@
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
+    }
+    
+    /* Active menu toggle button */
+    .menu-toggle--active .menu-toggle__line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-toggle--active .menu-toggle__line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle--active .menu-toggle__line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
     
     .nav__list {

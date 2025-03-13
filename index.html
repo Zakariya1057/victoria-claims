@@ -57,8 +57,9 @@
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero__video-container">
-                <video autoplay muted loop class="hero__video">
-                    <source src="assets/video.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline class="hero__video" poster="assets/poster-image.jpg">
+                    <source src="assets/video.mp4" type="video/mp4" media="(min-width: 768px)">
+                    <source src="assets/video_mobile.mp4" type="video/mp4" media="(max-width: 767px)">
                     Your browser does not support the video tag.
                 </video>
                 <div class="hero__overlay"></div>
@@ -311,7 +312,7 @@
                         <p>Grove St, </p>
                         <p>Birmingham,</p>
                         <p>B66 2QS</p>
-                        <p>+44 7445 687 465</p>
+                        <p>0121 517 0597</p>
                         <p>info@victoriaclaims.com</p>
                     </div>
                 </div>
@@ -339,6 +340,7 @@
     <script src="js/index.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/carousel.js"></script>
-    <script src="temp/menu-debug.js"></script>
+    <script src="js/navbar-fix.js"></script>
+    <script src="js/video-handler.js"></script>
 </body>
 </html>
