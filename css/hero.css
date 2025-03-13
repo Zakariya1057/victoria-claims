@@ -1,10 +1,11 @@
 /* Hero section styling matching the reference image */
 .hero {
     position: relative;
-    min-height: 100vh;
+    height: 100vh; /* Fixed height for consistency */
     display: flex;
     align-items: center;
     z-index: 1;
+    overflow: hidden; /* Prevent content from extending beyond */
 }
 
 .hero__video-container {
@@ -24,13 +25,10 @@
 /* Standard video styling for non-iOS devices */
 .hero__video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -145,11 +143,16 @@
 }
 
 @media (max-width: 767px) {
+    .hero {
+        height: 100vh; /* Use full viewport height on mobile */
+        min-height: initial; /* Remove minimum height constraint */
+    }
+    
     .hero__video {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transform: translateX(-50%) translateY(-50%) scale(1.2); /* Zoom mobile video by 20% */
+        transform: scale(1.2); /* Zoom mobile video by 20% */
     }
     
     .hero__title {
