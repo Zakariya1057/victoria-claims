@@ -197,6 +197,17 @@
     margin: 0;
 }
 
+.footer__established {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin: 0 8px;
+    position: relative;
+    font-family: 'Figtree', sans-serif;
+}
+
 .footer__credit a {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
@@ -228,8 +239,11 @@
 }
 
 .social-circle:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.35);
     transform: translateY(-2px);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.9);
 }
 
 .social-circle i {
