@@ -23,10 +23,6 @@
 
 /* Hide video on iOS and rely on background image instead */
 @supports (-webkit-touch-callout: none) {
-    .hero__video {
-        display: none;
-    }
-    
     /* On iOS, we'll use a background image that matches the video frames */
     .hero__video-container {
         background-image: url('../assets/video_mobile.jpg');
