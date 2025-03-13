@@ -57,7 +57,8 @@
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero__video-container">
-                <video autoplay muted loop playsinline class="hero__video" poster="assets/poster-image.jpg">
+                <!-- Video with optimized attributes for cross-browser/iOS compatibility -->
+                <video id="hero-video" autoplay muted loop playsinline preload="metadata" class="hero__video">
                     <source src="assets/video.mp4" type="video/mp4" media="(min-width: 768px)">
                     <source src="assets/video_mobile.mp4" type="video/mp4" media="(max-width: 767px)">
                     Your browser does not support the video tag.

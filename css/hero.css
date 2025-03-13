@@ -33,6 +33,19 @@
     object-fit: cover;
 }
 
+/* Special iOS-specific styles to help with video playback */
+@supports (-webkit-touch-callout: none) {
+    .hero__video {
+        position: absolute;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}
+
 .hero__overlay {
     position: absolute;
     top: 0;
