@@ -4,7 +4,7 @@
     padding: 60px 0 40px;
     position: relative;
     overflow: hidden;
-    background-image: url('semi-circle.svg');
+    background-image: url('../assets/semi-circle.svg');
     background-position: 0 100%;
     background-repeat: no-repeat;
     font-family: 'Figtree', sans-serif;
