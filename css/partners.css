@@ -37,6 +37,10 @@
     font-family: 'Figtree', sans-serif;
 }
 
+.title-segment {
+    display: block;
+}
+
 /* Carousel styling */
 .partners__carousel {
     flex: 1;
@@ -130,8 +134,8 @@
         margin-bottom: 1.5rem;
     }
     
-    .partners__title br {
-        display: none;
+    .title-segment {
+        display: block; /* Keep segments displaying as blocks on mobile */
     }
     
     .carousel-viewport {
