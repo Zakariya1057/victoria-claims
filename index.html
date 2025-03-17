@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="temp/navbar-fix.css">
     <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/contact-forms.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -329,6 +330,435 @@
         </div>
     </section>
 
+    <!-- Contact Forms Section -->
+    <section class="contact-forms animate-on-scroll" id="contact">
+        <div class="contact-forms__container">
+            <div class="contact-forms__row">
+                <!-- Request Callback Form -->
+                <div class="contact-form contact-form--callback">
+                    <div class="contact-form__header">
+                        <h2 class="contact-form__title">Request a Call Back</h2>
+                        <p class="contact-form__subtitle">Leave your details and we'll call you back.</p>
+                    </div>
+                    <form class="contact-form__form" id="callbackForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input" value="David Wilson" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-callback" class="form-label">Email Address</label>
+                            <input type="email" id="email-callback" name="email" class="form-input" value="david.wilson@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone-callback" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone-callback" name="phone" class="form-input" value="07712 345678" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferred-time" class="form-label">Preferred Contact Time</label>
+                            <select id="preferred-time" name="preferred-time" class="form-input" required>
+                                <option value="" disabled>Select preferred time</option>
+                                <option value="morning" selected>Morning (9am - 12pm)</option>
+                                <option value="afternoon">Afternoon (12pm - 5pm)</option>
+                                <option value="evening">Evening (5pm - 8pm)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Brief Message</label>
+                            <textarea id="message" name="message" class="form-textarea">I was involved in a non-fault accident last week and would like to discuss making a claim.</textarea>
+                        </div>
+                        <div class="contact-form__submit">
+                            <button type="submit" class="btn-primary">Request Call Back <i class="fas fa-phone"></i></button>
+                        </div>
+                    </form>
+                    <div class="form-success-message" id="callbackSuccessMessage" style="display: none;">
+                        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>Thank you for your request!</h3>
+                        <p>We have received your details and will be in touch with you shortly.</p>
+                    </div>
+                </div>
+                
+                <!-- Create a Claim Section -->
+                <div class="contact-form contact-form--claim">
+                    <div class="contact-form__header">
+                        <h2 class="contact-form__title">Claims Form</h2>
+                        <p class="contact-form__subtitle">Start your claim process in simple steps.</p>
+                    </div>
+                    
+                    <!-- Multi-step form -->
+                    <form id="claimForm" class="claim-form">
+                        <!-- Step 1: Personal Details -->
+                        <div class="form-step active" id="step1">
+                            <div class="form-section">
+                                <h3 class="form-section-title">Driver Details</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fullName" class="form-label">Full Name</label>
+                                        <input type="text" id="fullName" name="fullName" class="form-input" value="John Smith" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" id="email" name="email" class="form-input" value="john.smith@example.com" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="dob" class="form-label">Date of Birth</label>
+                                        <input type="date" id="dob" name="dob" class="form-input" value="1985-06-15" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Tel - Mobile</label>
+                                        <input type="tel" id="phone" name="phone" class="form-input" value="07700 900123" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="address" class="form-label">Full Address</label>
+                                        <textarea id="address" name="address" class="form-textarea" required>123 High Street, London, SW1A 1AA</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="occupation" class="form-label">Occupation</label>
+                                        <input type="text" id="occupation" name="occupation" class="form-input" value="Marketing Manager" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nationalInsurance" class="form-label">National Insurance Number</label>
+                                        <input type="text" id="nationalInsurance" name="nationalInsurance" class="form-input" value="AB123456C" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Vehicle Details -->
+                        <div class="form-step" id="step2">
+                            <div class="form-section">
+                                <h3 class="form-section-title">Vehicle Details</h3>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="vehicleReg" class="form-label">Vehicle Registration</label>
+                                        <input type="text" id="vehicleReg" name="vehicleReg" class="form-input" value="AB12 XYZ" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="vehicleMake" class="form-label">Vehicle Make & Model</label>
+                                        <input type="text" id="vehicleMake" name="vehicleMake" class="form-input" value="BMW 3 Series" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="vehicleYear" class="form-label">Year of Manufacture</label>
+                                        <input type="number" id="vehicleYear" name="vehicleYear" class="form-input" value="2018" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="policyType" class="form-label">Policy Type</label>
+                                        <select id="policyType" name="policyType" class="form-input" required>
+                                            <option value="" disabled>Select policy type</option>
+                                            <option value="comprehensive" selected>Comprehensive</option>
+                                            <option value="thirdParty">Third Party, Fire & Theft</option>
+                                            <option value="thirdPartyOnly">Third Party Only</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="insurerName" class="form-label">Insurer Name</label>
+                                        <input type="text" id="insurerName" name="insurerName" class="form-input" value="Admiral Insurance" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="policyNumber" class="form-label">Policy Number</label>
+                                        <input type="text" id="policyNumber" name="policyNumber" class="form-input" value="POL123456789" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Accident Details -->
+                        <div class="form-step" id="step3">
+                            <div class="form-section">
+                                <h3 class="form-section-title">Accident Details</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="accidentDate" class="form-label">Accident Date</label>
+                                        <input type="date" id="accidentDate" name="accidentDate" class="form-input" value="2025-03-10" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="accidentTime" class="form-label">Accident Time</label>
+                                        <input type="time" id="accidentTime" name="accidentTime" class="form-input" value="14:30" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="accidentLocation" class="form-label">Accident Location</label>
+                                        <input type="text" id="accidentLocation" name="accidentLocation" class="form-input" placeholder="Street address, city, postcode" required value="Junction of Oxford Street and Regent Street, London">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="weather" class="form-label">Weather Conditions</label>
+                                        <select id="weather" name="weather" class="form-input" required>
+                                            <option value="" disabled>Select weather condition</option>
+                                            <option value="clear" selected>Clear</option>
+                                            <option value="rain">Rain</option>
+                                            <option value="snow">Snow</option>
+                                            <option value="fog">Fog</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="accidentDescription" class="form-label">Accident Circumstances</label>
+                                        <textarea id="accidentDescription" name="accidentDescription" class="form-input form-textarea" rows="5" placeholder="Provide details of how the accident occurred" required>I was stationary at a red light when the third party vehicle collided with the rear of my vehicle.</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="vehicleDamage" class="form-label">Vehicle Damage</label>
+                                        <textarea id="vehicleDamage" name="vehicleDamage" class="form-input form-textarea" rows="4" placeholder="Detail all damage to your vehicle" required>Rear bumper damage, broken tail light, and possible chassis misalignment.</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="injuries" class="form-label">Injuries Sustained</label>
+                                        <textarea id="injuries" name="injuries" class="form-input form-textarea" rows="4" placeholder="List any injuries sustained by you or passengers" required>Whiplash symptoms, back pain, and minor bruising from seatbelt.</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4: Third Party Details -->
+                        <div class="form-step" id="step4">
+                            <div class="form-section">
+                                <h3 class="form-section-title">Third Party Details</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="thirdPartyName" class="form-label">Full Name</label>
+                                        <input type="text" id="thirdPartyName" name="thirdPartyName" class="form-input" value="Jane Doe">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="thirdPartyNumber" class="form-label">Contact Number</label>
+                                        <input type="tel" id="thirdPartyNumber" name="thirdPartyNumber" class="form-input" value="07700 800456">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="thirdPartyVehicle" class="form-label">Vehicle Make & Model</label>
+                                        <input type="text" id="thirdPartyVehicle" name="thirdPartyVehicle" class="form-input" value="Ford Focus">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="thirdPartyReg" class="form-label">Registration</label>
+                                        <input type="text" id="thirdPartyReg" name="thirdPartyReg" class="form-input" value="CD34 WXY">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="thirdPartyAddress" class="form-label">Address</label>
+                                        <textarea id="thirdPartyAddress" name="thirdPartyAddress" class="form-textarea" style="height: 70px;">456 Park Lane, Manchester, M1 5QR</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="thirdPartyInsurer" class="form-label">Insurer Name</label>
+                                        <input type="text" id="thirdPartyInsurer" name="thirdPartyInsurer" class="form-input" value="Aviva">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="thirdPartyPolicy" class="form-label">Policy Number</label>
+                                        <input type="text" id="thirdPartyPolicy" name="thirdPartyPolicy" class="form-input" value="TPP987654321">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="liabilityAdmitted" class="form-label">Has liability been admitted?</label>
+                                        <select id="liabilityAdmitted" name="liabilityAdmitted" class="form-input">
+                                            <option value="" disabled>Select an option</option>
+                                            <option value="yes" selected>Yes</option>
+                                            <option value="no">No</option>
+                                            <option value="partial">Partial</option>
+                                            <option value="unknown">Unknown</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 5: Documents Upload -->
+                        <div class="form-step" id="step5">
+                            <div class="form-section">
+                                <h3 class="form-section-title">Documents Needed</h3>
+                                <p class="form-section-desc">We will require the following documents to support your case:</p>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Driving Licence (Front & Back)</label>
+                                        <div class="file-upload">
+                                            <label for="drivingLicence" class="file-upload-label">
+                                                <i class="fas fa-upload"></i> Choose file
+                                            </label>
+                                            <input type="file" id="drivingLicence" name="drivingLicence" class="file-upload-input" accept="image/*,.pdf">
+                                            <div class="file-name">No file chosen</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Insurance Certificate</label>
+                                        <div class="file-upload">
+                                            <label for="insuranceCertificate" class="file-upload-label">
+                                                <i class="fas fa-upload"></i> Choose file
+                                            </label>
+                                            <input type="file" id="insuranceCertificate" name="insuranceCertificate" class="file-upload-input" accept="image/*,.pdf">
+                                            <div class="file-name">No file chosen</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Logbook (Page 1, 2, & 4)</label>
+                                        <div class="file-upload">
+                                            <label for="logbook" class="file-upload-label">
+                                                <i class="fas fa-upload"></i> Choose file
+                                            </label>
+                                            <input type="file" id="logbook" name="logbook" class="file-upload-input" accept="image/*,.pdf">
+                                            <div class="file-name">No file chosen</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Proof Of Address (Please provide 2 forms of proof of address)</label>
+                                        <p class="form-text">(Bank Statements/ Utility Bills)</p>
+                                        <div class="file-upload">
+                                            <label for="proofOfAddress" class="file-upload-label">
+                                                <i class="fas fa-upload"></i> Choose file
+                                            </label>
+                                            <input type="file" id="proofOfAddress" name="proofOfAddress" class="file-upload-input" accept="image/*,.pdf" multiple>
+                                            <div class="file-name">No file chosen</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Vehicle Damage Images</label>
+                                        <p class="form-text">Please provide us with images of the damages on your vehicle.</p>
+                                        <div class="file-upload">
+                                            <label for="damageImages" class="file-upload-label">
+                                                <i class="fas fa-upload"></i> Choose file
+                                            </label>
+                                            <input type="file" id="damageImages" name="damageImages" class="file-upload-input" accept="image/*" multiple>
+                                            <div class="file-name">No file chosen</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="consent-section">
+                                    <label for="privacyConsent" class="form-checkbox">
+                                        <input type="checkbox" id="privacyConsent" name="privacyConsent" checked required>
+                                        <span>I agree to the privacy policy and consent to my data being processed for this claim.</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 6: Review Information -->
+                        <div class="form-step" id="step6">
+                            <div class="form-section">
+                                <h3 class="form-section-title">Review Your Claim</h3>
+                                <p class="form-section-desc">Please review your information below to ensure everything is accurate before submitting your claim.</p>
+                                
+                                <div class="form-row">
+                                    <div class="review-section">
+                                        <h4 class="review-section-title">Personal Details</h4>
+                                        <div class="review-item">
+                                            <div class="review-label">Name:</div>
+                                            <div class="review-value" id="reviewName">John Smith</div>
+                                        </div>
+                                        <div class="review-item">
+                                            <div class="review-label">Contact:</div>
+                                            <div class="review-value" id="reviewContact">john.smith@example.com · 07700 900123</div>
+                                        </div>
+                                        <div class="review-item">
+                                            <div class="review-label">Occupation:</div>
+                                            <div class="review-value" id="reviewOccupation">Marketing Manager</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="review-section">
+                                        <h4 class="review-section-title">Vehicle Details</h4>
+                                        <div class="review-item">
+                                            <div class="review-label">Registration:</div>
+                                            <div class="review-value" id="reviewReg">AB12 XYZ</div>
+                                        </div>
+                                        <div class="review-item">
+                                            <div class="review-label">Vehicle:</div>
+                                            <div class="review-value" id="reviewVehicle">BMW 3 Series (2018)</div>
+                                        </div>
+                                        <div class="review-item">
+                                            <div class="review-label">Insurance:</div>
+                                            <div class="review-value" id="reviewInsurance">Admiral Insurance · Comprehensive</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="review-section">
+                                        <h4 class="review-section-title">Accident Details</h4>
+                                        <div class="review-item">
+                                            <div class="review-label">Date & Time:</div>
+                                            <div class="review-value" id="reviewDateTime">10 March 2025, 14:30</div>
+                                        </div>
+                                        <div class="review-item">
+                                            <div class="review-label">Location:</div>
+                                            <div class="review-value" id="reviewLocation">Junction of Oxford Street and Regent Street, London</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="review-section">
+                                        <h4 class="review-section-title">Third Party Details</h4>
+                                        <div class="review-item">
+                                            <div class="review-label">Name:</div>
+                                            <div class="review-value" id="reviewTPName">Jane Doe</div>
+                                        </div>
+                                        <div class="review-item">
+                                            <div class="review-label">Vehicle:</div>
+                                            <div class="review-value" id="reviewTPVehicle">Ford Focus (CD34 WXY)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="review-message">
+                                        <p><strong>Please note:</strong> By submitting this claim, you confirm that all the information provided is accurate and complete. Our team will contact you within 24 hours to discuss your claim further.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Form Navigation Buttons -->
+                        <div class="form-navigation">
+                            <button type="button" id="prevBtn" class="nav-btn prev-btn" disabled><i class="fas fa-arrow-left"></i> Back</button>
+                            <button type="button" id="nextBtn" class="nav-btn next-btn">Continue <i class="fas fa-arrow-right"></i></button>
+                            <button type="submit" id="submitBtn" class="nav-btn submit-btn" style="display: none;">Submit Claim <i class="fas fa-check"></i></button>
+                        </div>
+                    </form>
+                    
+                    <!-- Success Message - Initially Hidden -->
+                    <div class="form-success-message" id="claimSuccessMessage" style="display: none;">
+                        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>Thank you for your claim submission!</h3>
+                        <p>We have received your claim details and will be in touch with you shortly to process your claim.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer" id="footer">        
         <div class="container">
@@ -403,5 +833,6 @@
     <script src="js/navbar-fix.js"></script>
     <script src="js/video-handler.js"></script>
     <script src="js/testimonials.js"></script>
+    <script src="js/claim-form.js"></script>
 </body>
 </html>

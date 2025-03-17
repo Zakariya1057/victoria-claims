@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Claims Form | Victoria Claims Management</title>
+    <meta name="description" content="Victoria Claims Management - Submit your insurance claim details through our easy-to-use claims form.">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/claims-form.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo-clear.png" alt="Victoria Claims" class="logo__image">
+                    </a>
+                </div>
+                <nav class="nav" id="nav" aria-label="Main navigation">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="index.html#about-statement" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="index.html#stats" class="nav__link">Results</a></li>
+                        <li class="nav__item"><a href="index.html#services" class="nav__link">Services</a></li>
+                    </ul>
+                </nav>
+                <div class="header__cta">
+                    <a href="index.html#footer" class="btn btn--outline header__cta-btn">Get in touch</a>
+                </div>
+                <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                    <span class="menu-toggle__line"></span>
+                    <span class="menu-toggle__line"></span>
+                    <span class="menu-toggle__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="claims-form-section">
+            <div class="container">
+                <div class="claims-form-container">
+                    <!-- Header -->
+                    <div class="claims-form-header">
+                        <img src="assets/logo-clear.png" alt="Victoria Claims" class="claims-form-logo">
+                        <h1 class="claims-form-title">CLAIMS FORM</h1>
+                    </div>
+                    
+                    <!-- Introduction -->
+                    <div class="claims-form-intro">
+                        <p>Thank you for choosing Victoria Claims to handle your claim, we appreciate your custom. Please fill in the form below and provide us with the relevant documents so we can process your claim.</p>
+                    </div>
+                    
+                    <!-- Progress indicator -->
+                    <div class="form-progress">
+                        <div class="progress-step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <span class="step-label">Accident Details</span>
+                        </div>
+                        <div class="progress-step" data-step="2">
+                            <div class="step-number">2</div>
+                            <span class="step-label">Driver Details</span>
+                        </div>
+                        <div class="progress-step" data-step="3">
+                            <div class="step-number">3</div>
+                            <span class="step-label">Third Party</span>
+                        </div>
+                        <div class="progress-step" data-step="4">
+                            <div class="step-number">4</div>
+                            <span class="step-label">Documents</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Form body with multiple pages -->
+                    <form id="claimsForm">
+                        <div class="claims-form-body">
+                            <!-- Page 1: Accident Details -->
+                            <div class="form-page active" id="page1">
+                                <div class="form-section">
+                                    <h2 class="form-section-title">Accident Details</h2>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="accidentDate" class="form-label">Accident Date</label>
+                                            <input type="date" id="accidentDate" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="accidentTime" class="form-label">Time of Accident</label>
+                                            <input type="time" id="accidentTime" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="accidentLocation" class="form-label">Location</label>
+                                        <input type="text" id="accidentLocation" class="form-control" placeholder="Location" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="accidentCircumstances" class="form-label">Accident Circumstances</label>
+                                        <textarea id="accidentCircumstances" class="form-control" placeholder="Describe how it happened" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Page 2: Driver Details -->
+                            <div class="form-page" id="page2">
+                                <div class="form-section">
+                                    <h2 class="form-section-title">Driver Details</h2>
+                                    <div class="form-group">
+                                        <label for="driverName" class="form-label">Full Name</label>
+                                        <input type="text" id="driverName" class="form-control" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="driverDob" class="form-label">Date of Birth</label>
+                                            <input type="date" id="driverDob" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="driverMobile" class="form-label">Tel - Mobile</label>
+                                            <input type="tel" id="driverMobile" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="driverEmail" class="form-label">Email Address</label>
+                                        <input type="email" id="driverEmail" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="driverAddress" class="form-label">Full Address</label>
+                                        <textarea id="driverAddress" class="form-control" required></textarea>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="nationalInsurance" class="form-label">National Insurance</label>
+                                            <input type="text" id="nationalInsurance" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="occupation" class="form-label">Occupation</label>
+                                            <input type="text" id="occupation" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="vehicleReg" class="form-label">Vehicle Registration</label>
+                                            <input type="text" id="vehicleReg" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vehicleMakeModel" class="form-label">Vehicle Make and Model</label>
+                                            <input type="text" id="vehicleMakeModel" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="insurerName" class="form-label">Insurer Name</label>
+                                        <input type="text" id="insurerName" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Page 3: Third Party Details -->
+                            <div class="form-page" id="page3">
+                                <div class="form-section">
+                                    <h2 class="form-section-title">Third Party Details</h2>
+                                    <div class="form-group">
+                                        <label for="thirdPartyName" class="form-label">Full Name</label>
+                                        <input type="text" id="thirdPartyName" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="thirdPartyReg" class="form-label">Registration</label>
+                                        <input type="text" id="thirdPartyReg" class="form-control" placeholder="Reg" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="thirdPartyAddress" class="form-label">Address</label>
+                                        <textarea id="thirdPartyAddress" class="form-control" required></textarea>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="thirdPartyNumber" class="form-label">Number</label>
+                                            <input type="tel" id="thirdPartyNumber" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="thirdPartyPolicyNumber" class="form-label">Policy Number</label>
+                                            <input type="text" id="thirdPartyPolicyNumber" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="liabilityAdmitted" class="form-label">Has liability been admitted?</label>
+                                        <select id="liabilityAdmitted" class="form-control" required>
+                                            <option value="" selected disabled>Select an option</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                            <option value="partial">Partial</option>
+                                            <option value="unknown">Unknown</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Page 4: Documents Needed -->
+                            <div class="form-page" id="page4">
+                                <div class="form-section">
+                                    <h2 class="form-section-title">Documents Needed</h2>
+                                    <p>We will require the following documents to support your case:</p>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Driving Licence (Front & Back)</label>
+                                        <div class="form-file">
+                                            <label class="file-upload-label" for="drivingLicence">
+                                                <i class="fas fa-upload"></i> Choose file
+                                            </label>
+                                            <input type="file" id="drivingLicence" class="file-upload-input" accept="image/*,.pdf">
+                                            <div class="file-name">No file chosen</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Insurance Certificate</label>
+                                        <div class="form-file">
+                                            <label class="file-upload-label" for="insuranceCertificate">
+                                                <i class="fas fa-upload"></i> Choose file
+                                            </label>
+                                            <input type="file" id="insuranceCertificate" class="file-upload-input" accept="image/*,.pdf">
+                                            <div class="file-name">No file chosen</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Logbook (Page 1, 2, & 4)</label>
+                                        <div class="form-file">
+                                            <label class="file-upload-label" for="logbook">
+                                                <i class="fas fa-upload"></i> Choose file
+                                            </label>
+                                            <input type="file" id="logbook" class="file-upload-input" accept="image/*,.pdf">
+                                            <div class="file-name">No file chosen</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Proof Of Address (Please provide 2 forms of proof of address)<br>(Bank Statements/ Utility Bills)</label>
+                                        <div class="form-file">
+                                            <label class="file-upload-label" for="proofOfAddress">
+                                                <i class="fas fa-upload"></i> Choose file
+                                            </label>
+                                            <input type="file" id="proofOfAddress" class="file-upload-input" accept="image/*,.pdf" multiple>
+                                            <div class="file-name">No file chosen</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Please provide us with images of the damages on your vehicle.</label>
+                                        <div class="form-file">
+                                            <label class="file-upload-label" for="vehicleDamages">
+                                                <i class="fas fa-upload"></i> Choose file
+                                            </label>
+                                            <input type="file" id="vehicleDamages" class="file-upload-input" accept="image/*" multiple>
+                                            <div class="file-name">No file chosen</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Form Navigation -->
+                        <div class="form-navigation">
+                            <button type="button" class="nav-btn btn-prev" id="prevBtn" disabled>Previous</button>
+                            <button type="button" class="nav-btn btn-next" id="nextBtn">Next</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Footer -->
+                    <div class="claims-form-footer">
+                        <p>Victoria Claims Management Limited, is registered as a limited company in England and Wales under company number: 12064375.<br>
+                        Registered Company Address: 123 Claims Street, Birmingham, B1 1AA.<br>
+                        © All Copyright 2025 by Victoria Claims Management</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">        
+        <div class="container">
+            <div class="footer__columns">
+                <div class="footer__column">
+                    <h3 class="footer__heading">STAY IN THE LOOP</h3>
+                    <p class="footer__text">Subscribe to our newsletter for the latest updates on our services and industry news.</p>
+                    <form class="footer__form">
+                        <input type="email" class="footer__input" placeholder="Email Address" required>
+                        <button type="submit" class="footer__button">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer__column">
+                    <h3 class="footer__heading">CONTACT US</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><i class="fas fa-map-marker-alt footer__icon"></i> 123 Claims Street, Birmingham, B1 1AA</li>
+                        <li class="footer__item"><i class="fas fa-phone footer__icon"></i> 0800 123 4567</li>
+                        <li class="footer__item"><i class="fas fa-envelope footer__icon"></i> info@victoriaclaims.co.uk</li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h3 class="footer__heading">COMPANY</h3>
+                    <ul class="footer__list footer__list--links">
+                        <li class="footer__item"><a href="#" class="footer__link">About Us</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Our Services</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Testimonials</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 Victoria Claims Management. All rights reserved.</p>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for form functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form navigation
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const pages = document.querySelectorAll('.form-page');
+            const progressSteps = document.querySelectorAll('.progress-step');
+            let currentPage = 0;
+            
+            // Function to show specific page
+            function showPage(pageIndex) {
+                // Hide all pages
+                pages.forEach((page, index) => {
+                    if (index < pageIndex) {
+                        page.classList.remove('active', 'prev');
+                        page.classList.add('prev');
+                    } else if (index === pageIndex) {
+                        page.classList.add('active');
+                        page.classList.remove('prev');
+                    } else {
+                        page.classList.remove('active', 'prev');
+                    }
+                });
+                
+                // Update progress indicator
+                progressSteps.forEach((step, index) => {
+                    if (index === pageIndex) {
+                        step.classList.add('active');
+                    } else if (index < pageIndex) {
+                        step.classList.add('completed');
+                        step.classList.remove('active');
+                    } else {
+                        step.classList.remove('active', 'completed');
+                    }
+                });
+                
+                // Update buttons
+                prevBtn.disabled = pageIndex === 0;
+                if (pageIndex === pages.length - 1) {
+                    nextBtn.textContent = 'Submit';
+                } else {
+                    nextBtn.textContent = 'Next';
+                }
+                
+                currentPage = pageIndex;
+            }
+            
+            // Next button click handler
+            nextBtn.addEventListener('click', function() {
+                if (currentPage < pages.length - 1) {
+                    showPage(currentPage + 1);
+                } else {
+                    // Submit form - you would add AJAX submission here
+                    alert('Form submitted successfully!');
+                    document.getElementById('claimsForm').submit();
+                }
+            });
+            
+            // Previous button click handler
+            prevBtn.addEventListener('click', function() {
+                if (currentPage > 0) {
+                    showPage(currentPage - 1);
+                }
+            });
+            
+            // File upload handling
+            const fileInputs = document.querySelectorAll('.file-upload-input');
+            
+            fileInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    const fileName = this.files.length > 0 ? 
+                        (this.files.length > 1 ? `${this.files.length} files selected` : this.files[0].name) : 
+                        'No file chosen';
+                    
+                    this.parentElement.querySelector('.file-name').textContent = fileName;
+                });
+            });
+            
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const nav = document.getElementById('nav');
+            
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('nav--active');
+                menuToggle.classList.toggle('menu-toggle--active');
+                menuToggle.setAttribute('aria-expanded', 
+                    menuToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+            });
+        });
+    </script>
+</body>
+</html>
