@@ -249,7 +249,7 @@
     }
     
     .testimonial-card__text::after {
-        right: 0;
+        right: 2;
     }
 }
 
@@ -275,10 +275,11 @@
     
     .testimonial-card {
         padding: 15px;
+        height: 240px; /* Increased height for mobile */
     }
     
     .testimonials__cards {
-        height: 180px;
+        height: 240px; /* Matching container height to card height */
     }
     
     .testimonial-card__text {
@@ -293,5 +294,16 @@
     
     .testimonial-card__text::after {
         font-size: 35px;
+    }
+}
+
+/* Specific adjustment for iPhone XR and similar sized devices */
+@media (min-width: 375px) and (max-width: 414px) {
+    .testimonial-card {
+        height: 220px; /* Slightly reduced height for iPhone XR */
+    }
+    
+    .testimonials__cards {
+        height: 220px; /* Matching container height */
     }
 }
